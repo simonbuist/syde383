@@ -62,11 +62,7 @@ def getV2(L, h, isTurbulent, withTjoint):
 # Function to get next height based on v2
 def getNextH(L, hPrev, isTurbulent, withTjoint):
     v2, isTurbulent = getV2(L, hPrev, isTurbulent, withTjoint)
-    if (not withTjoint):
-        return (hPrev - (v2*a2/a1*timestep)), isTurbulent
-    else:
-        return (hPrev - (v2*a2/a1*timestep)), isTurbulent
-    
+    return (hPrev - (v2*a2/a1*timestep)), isTurbulent
 
 # Main function to get time to drain depeding on length of tube and if T-joint is attached
 def getTimeToDrain(L, withTjoint):
